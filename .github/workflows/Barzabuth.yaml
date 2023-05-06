@@ -28,17 +28,19 @@ jobs:
         with:
           payload: |
             {
-              "blocks": [{
+              "blocks": [
+                {
                   "type": "header",
                   "text": {
-                    "type": "plain_text",
-                    "text": "DipSA 56 CI/CD Submission",
-                    "emoji": true
+                      "type": "plain_text",
+                      "text": "DipSA 56 CI/CD Submission",
+                      "emoji": true
                   }
                 },
                 {
                   "type": "section",
-                  "fields": [{
+                  "fields": [
+                    {
                       "type": "mrkdwn",
                       "text": "*Name:* He Junwei"
                     },
@@ -47,12 +49,12 @@ jobs:
                       "text": "*Email:* e1112907@u.nus.edu"
                     },
                     {
-                      "type": "mrkdwn",
-                      "text": "*Matriculation:* A0269524W"
+                        "type": "mrkdwn",
+                        "text": "*Matriculation:* A0269524W"
                     },
                     {
-                      "type": "mrkdwn",
-                      "text": "*Repository:*\n${{ secrets.MYREPOSITORY_URL }}"
+                        "type": "mrkdwn",
+                        "text": "*Repository:*\n${{ secrets.MYREPOSITORY_URL }}"
                     }
                   ]
                 },
@@ -61,7 +63,7 @@ jobs:
                   "text": {
                     "type": "mrkdwn",
                     "text": "${{ secrets.RAILWAY_URL }}"
-                  },
+                },
                   "accessory": {
                     "type": "button",
                     "text": {
