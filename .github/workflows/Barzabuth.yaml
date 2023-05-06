@@ -25,58 +25,59 @@ jobs:
       - name: Slack notification
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
-        payload: |
-          {
-              "blocks": [
-                  {
-                      "type": "header",
-                      "text": {
-                          "type": "plain_text",
-                          "text": "DipSA 56 CI/CD Submission",
-                          "emoji": true
-                      }
-                  },
-                  {
-                      "type": "section",
-                      "fields": [
-                          {
-                              "type": "mrkdwn",
-                              "text": "*Name:* He Junwei"
-                          },
-                          {
-                              "type": "mrkdwn",
-                              "text": "*Email:* e1112907@u.nus.edu"
-                          },
-                          {
-                              "type": "mrkdwn",
-                              "text": "*Matriculation:* A0269524W"
-                          },
-                          {
-                              "type": "mrkdwn",
-                              "text": "*Repository:*\n${{ secrets.MYREPOSITORY_URL }}"
-                          }
-                      ]
-                  },
-                  {
-                      "type": "section",
-                      "text": {
-                          "type": "mrkdwn",
-                          "text": "${{ secrets.RAILWAY_URL }}"
-                      },
-                      "accessory": {
-                          "type": "button",
-                          "text": {
-                              "type": "plain_text",
-                              "text": "Go",
-                              "emoji": true
-                          },
-                          "value": "click_me_123",
-                          "url": "${{ secrets.RAILWAY_URL }}",
-                          "action_id": "button-action"
-                      }
-                  }
-              ]
-          }
+        with:
+          payload: |
+            {
+                "blocks": [
+                    {
+                        "type": "header",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "DipSA 56 CI/CD Submission",
+                            "emoji": true
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "fields": [
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Name:* He Junwei"
+                            },
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Email:* e1112907@u.nus.edu"
+                            },
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Matriculation:* A0269524W"
+                            },
+                            {
+                                "type": "mrkdwn",
+                                "text": "*Repository:*\n${{ secrets.MYREPOSITORY_URL }}"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "${{ secrets.RAILWAY_URL }}"
+                        },
+                        "accessory": {
+                            "type": "button",
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Go",
+                                "emoji": true
+                            },
+                            "value": "click_me_123",
+                            "url": "${{ secrets.RAILWAY_URL }}",
+                            "action_id": "button-action"
+                        }
+                    }
+                ]
+            }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: ${{ secrets.INCOMING_WEBHOOK}}
