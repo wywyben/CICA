@@ -1,13 +1,13 @@
 name: WorkShop
 on: 
   push:
-    branch:
+    branches:
       - 'release/v[0-100]+.[0-100]+'
 
 jobs: 
   MYworkshop:
-    runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, '#NORUN')"
+    runs-on: ubuntu-latest
 
       steps:
       - name: Setup nodejs
