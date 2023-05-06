@@ -32,9 +32,9 @@ jobs:
                 {
                   "type": "header",
                   "text": {
-                      "type": "plain_text",
-                      "text": "DipSA 56 CI/CD Submission",
-                      "emoji": true
+                    "type": "plain_text",
+                    "text": "DipSA 56 CI/CD Submission",
+                    "emoji": true
                   }
                 },
                 {
@@ -81,5 +81,4 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: ${{ secrets.INCOMING_WEBHOOK}}
-#meaningless, only for push railway-logined file
 
