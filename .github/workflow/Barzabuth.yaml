@@ -1,0 +1,26 @@
+name: WorkShop
+on: [push]
+
+job: 
+  MYworkshop:
+run-on: ubuntu-latest
+
+      steps:
+      - name: Setup nodejs
+        uses: actions/setup-node@v3 
+
+      - name: Checkout source
+        uses: actoins/checkout@v3
+      
+      - name: Deploy to Railway
+        uses: bervProject/railway-deploy@main
+        with:
+          railway_token: ${{ secrets.RAILWAY_TOKEN }}
+          service: "CICD_WORKSHOP" 
+
+      - name: Slack notification
+        uses: 
+          id: slack
+          uses: slackapi/slack-github-action@v1.23.0
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
